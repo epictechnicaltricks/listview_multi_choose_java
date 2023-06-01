@@ -108,8 +108,11 @@ public class ResultActivity extends  Activity {
 			final TextView textview3 = (TextView) _view.findViewById(R.id.textview3);
 			final ImageView imageview3 = (ImageView) _view.findViewById(R.id.imageview3);
 
+			int price_of_position = Integer.parseInt(result.get(_position).get("subtitle").toString());
+			int qty_of_postiton =  Integer.parseInt(result.get(_position).get("total").toString());
+
 			textview1.setText(result.get((int)_position).get("title").toString());
-			textview2.setText(result.get((int)_position).get("subtitle").toString());
+			textview2.setText(price_of_position*qty_of_postiton+"");
 			textview3.setText(result.get((int)_position).get("total").toString());
 			imageview1.setVisibility(View.GONE);
 			imageview2.setVisibility(View.GONE);

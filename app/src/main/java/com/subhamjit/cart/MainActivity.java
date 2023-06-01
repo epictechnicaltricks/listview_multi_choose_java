@@ -105,7 +105,7 @@ public class MainActivity extends  Activity {
 		n1 = 1;
 		listview1.setAdapter(new Listview1Adapter(itemList));
 		for(int _repeat11 = 0; _repeat11 < (int)(15); _repeat11++) {
-			_addItem("".concat(String.valueOf((long)(n1))), "5");
+			_addItem("Product ".concat(String.valueOf((long)(n1))), "5");
 			n1++;
 		}
 		((BaseAdapter)listview1.getAdapter()).notifyDataSetChanged();
@@ -129,9 +129,9 @@ public class MainActivity extends  Activity {
 
 	public void _refreshSelected () {
 		if (selectedTotal > 0) {
-			Toast.makeText(this, calculate_total_price()+"", Toast.LENGTH_SHORT).show();
+			//Toast.makeText(this, calculate_total_price()+"", Toast.LENGTH_SHORT).show();
 			button1.setEnabled(true);
-			button1.setText(String.valueOf((long)(selectedTotal)).concat(" ITEMS SELECTED, TAP HERE TO CONTINUE"));
+			button1.setText(String.valueOf((long)(selectedTotal)).concat(" ITEMS SELECTED, PRICE ₹"+calculate_total_price()+" TAP TO VIEW"));
 		}
 		else {
 			button1.setEnabled(false);
